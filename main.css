@@ -1,0 +1,36 @@
+h1{
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #1D84A3;
+  font-size: 40px;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+ table{ 
+  margin: 0 auto;
+}
+
+/* top right bottom left */
+td{
+  margin: 0 auto;
+  width: 100px;
+  height: 200px;
+  outline: 3px solid darkblue; 
+  text-align: center;
+  font-size: 150px;
+  color: black;
+}
+
+tr{
+  margin: 0 auto;
+  /* outline: 3px solid blue; */
+}
+
+button{
+  width: 70px;
+  height: 35px;
+  margin: 0px auto 5px auto;
+  display: block;
+}
