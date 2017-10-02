@@ -6,18 +6,19 @@ var turn;
 
 
 
-/*  var squares = {
-  sq1: document.getElementsByClassName('sq1'),
-  sq2: document.getElementsByClassName('sq2'),
-  sq3: document.getElementsByClassName('sq3'),
-  sq4: document.getElementsByClassName('sq4'),
-  sq5: document.getElementsByClassName('sq5'),
-  sq6: document.getElementsByClassName('sq6'),
-  sq7: document.getElementsByClassName('sq7'),
-  sq8: document.getElementsByClassName('sq8'),
-  sq9: document.getElementsByClassName('sq9'),
-} 
-*/
+ /* var sqs = [
+  document.getElementsByClassName('sq1'),
+  document.getElementsByClassName('sq2'),
+  document.getElementsByClassName('sq3'),
+  document.getElementsByClassName('sq4'),
+  document.getElementsByClassName('sq5'),
+  document.getElementsByClassName('sq6'),
+  document.getElementsByClassName('sq7'),
+  document.getElementsByClassName('sq8'),
+  document.getElementsByClassName('sq9'),
+  ] */
+
+var sqs = [null, null, null, null, null, null, null, null, null,];
 
 
 /*----- cached element references -----*/
@@ -58,7 +59,28 @@ function init(){
   render();
 }
 
-function render(){
+function render(evt){
+
+    if (document.getElementById('sq1').textContent === 'X'){
+      sqs[0] = 0;
+    }
+    if (sq1.textContent === 'O'){
+      sqs[0] = 1;
+    }
+
+    if (sq2.textContent === 'X'){
+      sqs[1] = 0;
+    }
+    if (sq2.textContent === 'O'){
+      sqs[1] = 1;
+    }
+
+    if (sq3.textContent === 'X'){
+      sqs[2] = 0;
+    }
+    if (sq3.textContent === 'O'){
+      sqs[2] = 1;
+    }
 
   checkForWin();
 }
@@ -82,12 +104,23 @@ function handleClick(evt){
       break;
     default:
       break;
+      
   }
-    
+  checkForWin();
 }
 
-function checkForWin(){
+function checkForWin(evt){
+  console.log('here!');
+  var letter;
+  console.log(sqs);
 
+  if(sqs[0] === sqs[1] === sqs[2]){
+    console.log('haha');
+    letter = evt.target.textContent;
+    console.log('haha')
+  }
+return letter;
+console.log(letter);
 }
 
 init();
