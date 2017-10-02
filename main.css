@@ -17,10 +17,13 @@ td{
   margin: 0 auto;
   width: 100px;
   height: 200px;
+  max-width: 100px;
   outline: 3px solid darkblue; 
   text-align: center;
-  font-size: 150px;
+  font-size: 130px;
   color: black;
+  font-family: 'Poppins', sans-serif;
+  
 }
 
 tr{

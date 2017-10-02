@@ -36,12 +36,16 @@ var sq9 = document.getElementById('sq9');
 
 var button = document.getElementById('button');
 
+
+
+
+/*----- event listeners -----*/
 button.addEventListener('click', function(){
   init();
 });
 
-/*----- event listeners -----*/
-
+document.querySelector('table')
+.addEventListener('click', handleClick);
 
 /*----- functions -----*/
 function init(){
@@ -50,7 +54,7 @@ function init(){
   for(i=1;i <= 9; i++){
     document.getElementById('sq' + i).innerHTML = '';
   } 
-
+  turn = 0;
   render();
 }
 
@@ -59,8 +63,27 @@ function render(){
   checkForWin();
 }
 
-function handleClick(){
-  
+function handleClick(evt){
+  var content = evt.target;
+  console.log(content)
+
+  if(content.textContent !== ''){
+    return;
+  }
+
+  switch(turn){
+    case 0:
+      content.textContent = 'X';
+      turn = 1;
+      break;
+    case 1:
+      content.textContent = 'O';
+      turn = 0;
+      break;
+    default:
+      break;
+  }
+    
 }
 
 function checkForWin(){
